@@ -10,4 +10,17 @@
       <p>La liste est vide !</p>
     }
   </ul>
+
+  <div>
+    @for (serie of series | filterTable:'asc'; let i = $index; track serie ){
+    <li>  {{ serie }}</li>}
+  </div>
+  <div>
+    <button (click)="sortSeries('asc')">ASC</button>
+    <button (click)="sortSeries('desc')">DESC</button>
+
+  </div>
+
+
+
 </section>

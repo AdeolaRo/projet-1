@@ -1,0 +1,24 @@
+<h2>Librairie</h2>
+
+<section>
+
+    <ul>
+        @for (book of books; track book; let i = $index) {
+            <li>
+            <p [ngClass]="{'souligne' : book.isRead}">Titre: {{book.title}}</p>
+            <p>Auteur: {{book.author}}</p>
+            <p>Lecture: {{book.isRead | thumbs }}</p>
+            <p><button (click)="toggleRead(i)">Etat Lecture</button></p>
+
+            </li>
+          <br>
+
+        }
+        @empty {
+            <p>La liste est vide !</p>
+          }
+    </ul>
+
+
+
+</section>
